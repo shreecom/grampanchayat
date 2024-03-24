@@ -15,7 +15,7 @@
       <img src="https://prd.mp.gov.in/Assets/Slider/SliderWork.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://jkpanchayat.jk.gov.in/admin/slider/banner1.jpg" class="d-block w-100" alt="...">
+      <img src="https://prd.mp.gov.in/Assets/Slider/SliderPaymnet.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">

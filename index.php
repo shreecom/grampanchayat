@@ -17,7 +17,11 @@ session_start();
     <?php
     require("./pages/navbar.php");
     require("./pages/slider.php");
-    // require("./pages/footer.php");
+    require("./pages/important_websites.php");
+    require("./pages/vision.php");
+    require("./pages/map.php");
+    require("./pages/contact_us.php");
+    require("./pages/footer.php");
     ?>
 </body>
 
