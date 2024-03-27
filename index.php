@@ -12,7 +12,6 @@ session_start();
     <title>Digital Grampanchayat</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <?php
     require("./pages/navbar.php");
