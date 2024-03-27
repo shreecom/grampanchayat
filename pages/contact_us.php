@@ -1,5 +1,24 @@
+<?php
+include("./connection.php");
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    if (!empty($name) && !empty($email)) {
+        $QUERY = "INSERT INTO contactus (name, email, subject, message) VALUES  ('$name', '$email', '$subject', '$message')";
+        mysqli_query($con, $QUERY);
+        echo "<script type='text/javascript'> alert('successfully registration')</script>";
+    } else {
+        echo "<script type='text/javascript'> alert('please enterd valid details')</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Contact Us Form</title>
@@ -74,47 +93,49 @@
         }
     </style>
 </head>
+
 <body>
 
-<div class="contact-form bg-light">
-    <h2>Contact Us</h2>
-    <form action="#" method="post" id="contactForm">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="form-group">
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit" style="background-color: #28a745; color: #ffffff;">Submit</button>
-        </div>
-    </form>
-</div>
+    <div class="contact-form bg-light">
+        <h2>Contact Us</h2>
+        <form action="#" method="post" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" style="background-color: #28a745; color: #ffffff;">Submit</button>
+            </div>
+        </form>
+    </div>
 
-<script>
-    // Simple client-side validation
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        if (!name || !email || !subject || !message) {
-            event.preventDefault();
-            alert('All fields are required.');
-        }
-    });
-</script>
+    <script>
+        // Simple client-side validation
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !subject || !message) {
+                event.preventDefault();
+                alert('All fields are required.');
+            }
+        });
+    </script>
 
 </body>
+
 </html>
