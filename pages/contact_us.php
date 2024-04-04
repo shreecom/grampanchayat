@@ -1,6 +1,5 @@
 <?php
 include("./connection.php");
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -93,9 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     </style>
 </head>
-
 <body>
-
     <div class="contact-form bg-light">
         <h2>Contact Us</h2>
         <form action="#" method="post" id="contactForm">
@@ -120,7 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </div>
         </form>
     </div>
-
     <script>
         // Simple client-side validation
         document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -128,7 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-
             if (!name || !email || !subject || !message) {
                 event.preventDefault();
                 alert('All fields are required.');

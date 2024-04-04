@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="navbar.css">
     <title>Grampanchayat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .btn.btn-light:hover {
+            background-color: inherit;
+            border-color: transparent;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,9 +21,13 @@
         <?php include "navbar.css" ?>
     </style>
     <div class="navbar-brand container-fluid bg-light d-flex justify-content-between align-items-center" href="#" style="font-size: 23px; font-weight: bold; color: #5a5a5a;">
-        <img src="https://grampanchayat.org.in/images/logo.png" alt="Logo" width="70" height="70" class="d-inline-block align-text-center">
-        Digital Grampanchayat
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Seal_of_Maharashtra.svg/800px-Seal_of_Maharashtra.svg.png" style="margin-left: auto;" width="70" height="70" />
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Seal_of_Maharashtra.svg/800px-Seal_of_Maharashtra.svg.png" alt="Logo" width="70" height="70" class="d-inline-block align-text-center">
+            Digital Grampanchayat
+        </div>
+        <div>
+            <button class="btn btn-light" onclick="openLoginPage()">Login / Register</button>
+        </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -38,7 +49,7 @@
                         <a class="nav-link" href="#" onclick="changeTabColor(this);">Government Yojna</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="pages/online_services/online_services.php" onclick="changeTabColor(this);">Online Services</a>
+                        <a class="nav-link" href="pages/online_services.php" onclick="changeTabColor(this);">Online Services</a>
                     </li>
                 </ul>
             </div>
@@ -49,6 +60,10 @@
     <!-- add javascript for change color  -->
     <script>
         let currentTab = null;
+
+        function openLoginPage() {
+            window.location.href = "pages/login.php";
+        }
 
         function changeTabColor(tab) {
             const navLinks = document.querySelectorAll('.nav-link');
